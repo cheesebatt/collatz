@@ -63,6 +63,9 @@ func collatz() {
 
     for i:=0; i < numOfOdds; i++ {
 
+        // There is a potential for deadlock here that I'm
+        // still trying to fix.  On my machine, it almost never
+        // occurs
         solved := <- solvedChanArr[i]
         nextOdd := nextOddArr[i]
 
